@@ -1,5 +1,4 @@
 import express from "express";
-import bodyParser from "body-parser";
 import { Onfido, Region } from "@onfido/api";
 import path from "path";
 import { fileURLToPath } from "url";
@@ -17,7 +16,7 @@ const onfido = new Onfido({
 });
 
 // Middleware to parse JSON requests
-app.use(bodyParser.json());
+app.use(express.json());
 
 // Middleware to serve static files. This line serves the frontend HTML, CSS, JS, etc.
 app.use(express.static(path.join(__dirname, 'public')));
