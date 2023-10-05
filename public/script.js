@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
       const firstName = document.getElementById("firstName").value;
       const lastName = document.getElementById("lastName").value;
       
-      // Client-side validation (the html form requires those fields, if someone, by any reason it is bypassed, this script will still reject the form with an alert (which I will potentially change))
+      // Client-side validation (the html form requires those fields, if by any reason it is bypassed, this script will still reject the form with an alert (which I will potentially change))
       if (!validateForm(firstName, lastName)) {
           return; // exit early if the form isn't valid
       }
@@ -57,7 +57,7 @@ function InitiateOnfido(data, resultsDiv) {
               }
 
               resultsDiv.textContent = outputMessage; // Sends results to the screen
-              resultsDiv.style.display = "block";
+              resultsDiv.style.display = "block"; // the resultsDiv was initially hidden, now it will be displayed.
           },
           steps: [{
                   type: 'welcome',
