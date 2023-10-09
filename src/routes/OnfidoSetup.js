@@ -26,4 +26,33 @@ const GenerateSDK = router.post("/createApplicant", async (req, res) => {
     }
 });
 
-export default GenerateSDK;
+// Sending via API the onfido configuration
+const OnfidoConfiguration = router.get('/getOnfidoConfig', (req, res) => {
+    const config = {
+       steps: [
+          {
+             type: 'welcome',
+             options: {
+                title: 'KYC Verification',
+             },
+          },
+          {
+             type: 'document',
+             options: {
+                forceCrossDevice: true
+             }
+          },
+          {
+             type: 'face',
+             options: {
+                requestedVariant: 'motion'
+             }
+          },
+          'complete'
+       ],
+    };
+    
+    res.json(config);
+ });
+
+export { GenerateSDK, OnfidoConfiguration };

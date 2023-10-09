@@ -1,7 +1,7 @@
 import express from "express";
 import path from "path";
 import { fileURLToPath } from "url";
-import GenerateSDK from "./routes/GenerateSDKToken.js";
+import { GenerateSDK, OnfidoConfiguration } from "./routes/OnfidoSetup.js";
 
 // Convert the current module's URL to a file path
 const __filename = fileURLToPath(import.meta.url);
@@ -16,6 +16,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 // GenerateSDKToken functionality
 
 app.use(GenerateSDK);
+app.use(OnfidoConfiguration);
+
 
 app.listen(port, () => {
     console.log(`Server running at http://localhost:${port}/`);
