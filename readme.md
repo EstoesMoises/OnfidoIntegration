@@ -12,5 +12,3 @@ The demonstration shows basic functionalities such as:
 
 # What to ignore
 - Ignore the poor CSS
-
-*I'll potentially come back with some updates later on :)*
